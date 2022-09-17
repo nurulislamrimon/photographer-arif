@@ -1,5 +1,6 @@
 import React from 'react';
-import MainCarousel from '../../Utilities/MainCarousel';
+import './Home.css'
+import MainCarousel from './MainCarousel';
 
 const Home = () => {
     return (
