@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     colors: {
       'primary': '#0f0f0f',
-      'secondary': '#7e5bef',
+      'secondary': '#ffffff',
+      'btnPrimary': '#fcc203',
       'white': '#ffffff',
       'black': '#000000'
     },

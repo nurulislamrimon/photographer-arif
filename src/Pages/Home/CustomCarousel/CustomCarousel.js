@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './CustomCarousel.css';
 
 const CustomCarousel = () => {
@@ -75,8 +76,9 @@ const CustomCarousel = () => {
     };
 
     return (
-        <div className='carousel-container h-[100vh] w-full overflow-x-hidden relative'>
-            <div className="fixed flex right-5 bottom-5 z-10 cursor-pointer rounded-full">
+        <div className='carousel-container w-full overflow-x-hidden'>
+
+            <div className="carousel-btn absolute top-2/4 flex justify-between w-full z-10 cursor-pointer rounded-full">
                 <div className="bg-[rgba(0,0,0,.4)] hover:bg-black text-white p-5 rounded-tl-full rounded-bl-full" onClick={(e) => handleCarouselItem('prev', e)}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                 </svg>
@@ -86,15 +88,23 @@ const CustomCarousel = () => {
                 </svg>
                 </div>
             </div>
+
+
             {allItems.map((item, index) => {
                 return <div className={index === currentItem ? 'carousel active' : 'carousel'}>
                     {currentItem === index &&
                         <>
+
                             <img className='w-full' src={item?.picture} alt="" />
-                            <div className='absolute top-0 mt-auto bottom-0 mb-auto left-0 ml-auto right-0 mr-auto lg:w-2/4 flex flex-col items-center justify-center text-center px-24 text-white'>
-                                <h1 className="text-5xl lg:text-[60px] font-bold capitalize font-poppins">{item?.name}</h1>
-                                <p className='tag text-lg lg:text-3xl mt-5 font-style'>{item?.about}</p>
-                                <p className='text-md lg:text-lg mt-5 font-poppins'>{item?.about}</p>
+
+
+                            <div className='absolute top-0 mt-auto bottom-0 mb-auto left-0 ml-auto right-0 mr-auto lg:w-2/4 flex flex-col items-center justify-center text-center px-24 text-white h-fit'>
+
+                                <h1 className="text-4xl lg:text-[60px] font-bold capitalize font-poppins leading-none">{item?.name}</h1>
+
+                                <p className='tag text-md lg:text-3xl mt-5 font-style'>{item?.about}</p>
+                                <p className='text-sm lg:text-lg mt-5 font-poppins'>{item?.about}</p>
+                                <Link to='/aboutMe' className='border border-btnPrimary rounded-3xl lg:py-3 px-10 mt-3 lg:mt-5'>More about me</Link>
                             </div>
                         </>
                     }
