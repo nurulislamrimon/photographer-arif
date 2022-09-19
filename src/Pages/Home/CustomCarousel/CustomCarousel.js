@@ -91,7 +91,7 @@ const CustomCarousel = () => {
 
 
             {allItems.map((item, index) => {
-                return <div className={index === currentItem ? 'carousel active' : 'carousel'}>
+                return <div className={`carousel ${index === currentItem && 'active'}`}>
                     {currentItem === index &&
                         <>
 

@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import './SlideCarousel.css'
 
 const SlideCarousel = () => {
-    return (
-        <div className='flex h-[50vh]'>
-            <div className="bg-secondary h-full w-2/4">
+    const [allItems, setAllItems] = useState([]);
 
+    // fetch carousel items
+    useEffect(() => {
+        fetch('/test.json')
+            .then(res => res.json())
+            .then(data => setAllItems(data))
+    }, []);
+
+    return (
+        <div className='w-full'>
+            <div className="slider-container gap-5 flex overflow-x-auto cursor-pointer" data-slick={`{"slidesToShow": 4, "slidesToScroll": 4}`}>
+                {allItems?.map(item => <img src={item?.picture} className={`h-[350px] w-full`} alt='img' />)}
             </div>
 
         </div>

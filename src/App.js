@@ -6,7 +6,7 @@ function App() {
 
 
   return (
-    <div className="App bg-primary">
+    <div className="App bg-primary overflow-x-hidden">
       <Routes>
         <Route path='/' element={<Home />} />
       </Routes>
