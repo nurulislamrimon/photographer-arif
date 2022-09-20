@@ -15,3 +15,7 @@
  .slider-container::-webkit-scrollbar-thumb:hover {
      background: #b30000;
  }
+
+ .slider-container {
+     scroll-behavior: smooth;
+ }

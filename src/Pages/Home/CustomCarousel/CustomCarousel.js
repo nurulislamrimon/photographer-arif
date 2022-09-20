@@ -76,14 +76,19 @@ const CustomCarousel = () => {
     };
 
     return (
-        <div className='carousel-container w-full overflow-x-hidden'>
+        <div className='carousel-container w-full overflow-x-hidden relative lg:h-[130vh] overflow-hidden'>
+            <div className='bg-black -rotate-90 text-textPrimary absolute top-14 lg:top-24 -left-16 lg:-left-28 flex z-20'>
+                <a href="tel: +8801811324330" className='p-1 text-xs lg:text-lg lg:p-5 text-secondary hover:text-white'>Mobile</a>
+                <a href="mailto: arifhasan@gmal.com" className='p-1 text-xs lg:text-lg lg:p-5 text-secondary hover:text-white'>Mail</a>
+                <a href="https://www.facebook.com/profile.php?id=100008209128475" target='_blank' rel="noreferrer" className='p-1 pr-2 text-xs lg:text-lg lg:p-5 text-secondary hover:text-white'>Facebook </a>
+            </div>
 
             <div className="carousel-btn absolute top-2/4 flex justify-between w-full z-10 cursor-pointer rounded-full">
-                <div className="bg-[rgba(0,0,0,.4)] hover:bg-black text-white p-5 rounded-tl-full rounded-bl-full" onClick={(e) => handleCarouselItem('prev', e)}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <div className="bg-[rgba(0,0,0,.4)] hover:bg-black text-white lg:p-5 rounded-tl-full rounded-bl-full" onClick={(e) => handleCarouselItem('prev', e)}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                 </svg>
                 </div>
-                <div className="bg-[rgba(0,0,0,.4)] hover:bg-black text-white p-5 rounded-tr-full rounded-br-full" onClick={(e) => handleCarouselItem('next', e)}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <div className="bg-[rgba(0,0,0,.4)] hover:bg-black text-white lg:p-5 rounded-tr-full rounded-br-full" onClick={(e) => handleCarouselItem('next', e)}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
                 </div>
@@ -95,16 +100,16 @@ const CustomCarousel = () => {
                     {currentItem === index &&
                         <>
 
-                            <img className='w-full' src={item?.picture} alt="" />
+                            <img className='w-full h-full object-cover' src={item?.picture} alt="" />
 
 
                             <div className='absolute top-0 mt-auto bottom-0 mb-auto left-0 ml-auto right-0 mr-auto lg:w-2/4 flex flex-col items-center justify-center text-center px-24 text-white h-fit'>
 
-                                <h1 className="text-4xl lg:text-[60px] font-bold capitalize font-poppins leading-none">{item?.name}</h1>
+                                <h1 className="text-xl lg:text-[60px] font-bold capitalize font-poppins leading-none w-32 lg:w-96">{item?.name}</h1>
 
-                                <p className='tag text-md lg:text-3xl mt-5 font-style'>{item?.about}</p>
-                                <p className='text-sm lg:text-lg mt-5 font-poppins'>{item?.about}</p>
-                                <Link to='/aboutMe' className='border border-btnPrimary rounded-3xl lg:py-3 px-10 mt-3 lg:mt-5'>More about me</Link>
+                                <p className='tag text-md lg:text-3xl mt-2 lg:mt-5 font-style'>{item?.about}</p>
+                                <p className='text-xs lg:text-lg mt-2 lg:mt-5 font-poppins'>{item?.about}</p>
+                                <Link to='/aboutMe' className='border text-xs lg:text-lg border-secondary rounded-3xl lg:py-3 px-3 lg:px-10 mt-2 lg:mt-5'>More about me</Link>
                             </div>
                         </>
                     }
