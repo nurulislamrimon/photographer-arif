@@ -28,6 +28,7 @@
  .carousel-container .carousel img {
      user-select: none;
      animation: carouselIn 4s ease-in;
+     transform-origin: center;
  }
 
  .carousel div {

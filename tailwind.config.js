@@ -6,9 +6,9 @@ module.exports = {
         mytheme: {
 
           'primary': '#131414',
-          'secondary': '#fcc203',
-          'accent': '#c9d1cd',
-          'neutral': '#fcc203',
+          'secondary': '#c9d1cd',
+          'accent': '#656769',
+          'neutral': '#656769',
           'white': '#ffffff',
           'black': '#000000',
 
@@ -16,7 +16,7 @@ module.exports = {
 
           "info": "#3ABFF8",
 
-          "success": "#36D399",
+          "success": "#fcc203",
 
           "warning": "#FBBD23",
 

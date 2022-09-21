@@ -76,11 +76,11 @@ const CustomCarousel = () => {
     };
 
     return (
-        <div className='carousel-container w-full overflow-x-hidden relative lg:h-[130vh] overflow-hidden'>
+        <div className='carousel-container w-full overflow-x-hidden relative lg:min-h-[130vh] overflow-hidden'>
             <div className='bg-black -rotate-90 text-textPrimary absolute top-14 lg:top-24 -left-16 lg:-left-28 flex z-20'>
-                <a href="tel: +8801811324330" className='p-1 text-xs lg:text-lg lg:p-5 text-secondary hover:text-white'>Mobile</a>
-                <a href="mailto: arifhasan@gmal.com" className='p-1 text-xs lg:text-lg lg:p-5 text-secondary hover:text-white'>Mail</a>
-                <a href="https://www.facebook.com/profile.php?id=100008209128475" target='_blank' rel="noreferrer" className='p-1 pr-2 text-xs lg:text-lg lg:p-5 text-secondary hover:text-white'>Facebook </a>
+                <a href="tel: +8801811324330" className='p-1 text-xs lg:text-lg lg:p-5 text-success hover:text-white'>Mobile</a>
+                <a href="mailto: arifhasan@gmal.com" className='p-1 text-xs lg:text-lg lg:p-5 text-success hover:text-white'>Mail</a>
+                <a href="https://www.facebook.com/profile.php?id=100008209128475" target='_blank' rel="noreferrer" className='p-1 pr-2 text-xs lg:text-lg lg:p-5 text-success hover:text-white'>Facebook </a>
             </div>
 
             <div className="carousel-btn absolute top-2/4 flex justify-between w-full z-10 cursor-pointer rounded-full">
@@ -100,16 +100,16 @@ const CustomCarousel = () => {
                     {currentItem === index &&
                         <>
 
-                            <img className='w-full h-full object-cover' src={item?.picture} alt="" />
+                            <img className='w-full h-full object-cover overflow-hidden' src={item?.picture} alt="" />
 
+                            <div className='absolute inset-0 flex items-center justify-center'>
+                                <div className=' flex flex-col items-center justify-center text-center px-24 text-white h-fit'>
+                                    <h1 className="text-xl lg:text-[60px] font-bold capitalize font-poppins leading-none w-32 lg:w-96">{item?.name}</h1>
 
-                            <div className='absolute top-0 mt-auto bottom-0 mb-auto left-0 ml-auto right-0 mr-auto lg:w-2/4 flex flex-col items-center justify-center text-center px-24 text-white h-fit'>
-
-                                <h1 className="text-xl lg:text-[60px] font-bold capitalize font-poppins leading-none w-32 lg:w-96">{item?.name}</h1>
-
-                                <p className='tag text-md lg:text-3xl mt-2 lg:mt-5 font-style'>{item?.about}</p>
-                                <p className='text-xs lg:text-lg mt-2 lg:mt-5 font-poppins'>{item?.about}</p>
-                                <Link to='/aboutMe' className='border text-xs lg:text-lg border-secondary rounded-3xl lg:py-3 px-3 lg:px-10 mt-2 lg:mt-5'>More about me</Link>
+                                    <p className='tag text-md lg:text-3xl mt-2 lg:mt-5 font-style'>{item?.about}</p>
+                                    <p className='text-xs lg:text-lg mt-2 lg:mt-5 font-poppins'>{item?.about}</p>
+                                    <Link to='/aboutMe' className='border text-xs lg:text-lg border-success rounded-3xl lg:py-3 px-3 lg:px-10 mt-2 lg:mt-5 hover:bg-success duration-300'>More about me</Link>
+                                </div>
                             </div>
                         </>
                     }
