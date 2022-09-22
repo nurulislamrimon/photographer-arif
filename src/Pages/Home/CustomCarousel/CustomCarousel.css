@@ -36,6 +36,16 @@
      user-select: none;
  }
 
+ .social-btn-carousel::after {
+     content: '';
+     position: absolute;
+     width: 100%;
+     height: 1.5px;
+     bottom: 0;
+     right: 0;
+     background-color: gold;
+ }
+
  @keyframes carouselIn {
      from {
          opacity: 0;

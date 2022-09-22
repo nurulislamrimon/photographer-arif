@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../Utilities/Header/Header';
-import Footer from '../Footer/Footer';
+import Footer from '../../Utilities/Footer/Footer';
 import Achivement from './Acivement/Achivement';
 import CustomCarousel from './CustomCarousel/CustomCarousel';
 import './Home.css';
@@ -10,10 +10,7 @@ import SimpleIntro from './SimpleIntro/SimpleIntro';
 
 const Home = () => {
     return (
-        <div className="relative">
-            <div className="mb-16">
-                <Header />
-            </div>
+        <>
             <CustomCarousel />
             <SimpleIntro />
             <div className="flex justify-center">
@@ -21,8 +18,7 @@ const Home = () => {
             </div>
             <Achivement />
             <Portfolio />
-            <Footer />
-        </div>
+        </>
     );
 };
 

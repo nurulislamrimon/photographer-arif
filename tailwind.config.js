@@ -28,6 +28,7 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     fontFamily: {
+      'name': ['Ms Madi', 'cursive'],
       'header': ['Mochiy Pop One', 'sans-serif'],
       'poppins': ['Poppins', 'sans-serif'],
       'style': ['Berkshire Swash', 'cursive'],
