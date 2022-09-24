@@ -40,23 +40,23 @@ const Header = () => {
         } onClick={() => openNav && setOpenNav(!openNav)} key='ContactMe' to='/contactMe' className='hover:text-success'>Contact Me</NavLink>,
     ]
 
-    const navbar = document.getElementById("navbar");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
-            navbar.style.backgroundColor = "black";
-            navbar.style.borderBottom = "1px solid gold";
-            navbar.style.padding = "0 20px";
-        } else {
-            navbar.style.backgroundColor = "transparent";
-            navbar.style.borderBottom = "none";
-            navbar.style.padding = "0";
-        }
-    };
+    /*  const navbar = document.getElementById("navbar");
+     window.onscroll = function () {
+         if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
+             navbar.style.backgroundColor = "black";
+             navbar.style.borderBottom = "1px solid gold";
+             navbar.style.padding = "0 20px";
+         } else {
+             navbar.style.backgroundColor = "transparent";
+             navbar.style.borderBottom = "none";
+             navbar.style.padding = "0";
+         }
+     }; */
 
     return (
         <div>
-            <header id='navbar' className=' text-white h-fit flex justify-between items-center fixed top-0 w-full z-30 duration-1000'>
-                <NavLink to='/' className='bg-black p-2 lg:p-3'>
+            <header id='navbar' className=' text-white h-fit flex justify-between items-center fixed top-0 w-full z-30 duration-1000 glass px-10'>
+                <NavLink to='/' className='p-2 lg:p-3'>
                     <h3 className='text-xl lg:text-3xl text-success hover:text-white tracking-wider font-bold font-name'>Arif Hasan</h3>
                     <p className='text-xs lg:text-lg text-white hover:text-success'>Natural photographer</p>
                 </NavLink>
