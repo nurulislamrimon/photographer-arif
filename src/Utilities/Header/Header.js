@@ -45,9 +45,11 @@ const Header = () => {
         if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
             navbar.style.backgroundColor = "black";
             navbar.style.borderBottom = "1px solid gold";
+            navbar.style.padding = "0 20px";
         } else {
             navbar.style.backgroundColor = "transparent";
             navbar.style.borderBottom = "none";
+            navbar.style.padding = "0";
         }
     };
 
@@ -55,8 +57,8 @@ const Header = () => {
         <div>
             <header id='navbar' className=' text-white h-fit flex justify-between items-center fixed top-0 w-full z-30 duration-1000'>
                 <NavLink to='/' className='bg-black p-2 lg:p-3'>
-                    <h3 className='text-xl text-success hover:text-white tracking-wider font-bold font-name'>Arif Hasan</h3>
-                    <p className='text-xs text-white hover:text-success'>Natural photographer</p>
+                    <h3 className='text-xl lg:text-3xl text-success hover:text-white tracking-wider font-bold font-name'>Arif Hasan</h3>
+                    <p className='text-xs lg:text-lg text-white hover:text-success'>Natural photographer</p>
                 </NavLink>
                 {/* small device menu btn */}
                 <label onClick={() => setOpenNav(!openNav)} className="lg:hidden p-5 cursor-pointer">
