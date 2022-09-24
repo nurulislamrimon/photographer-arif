@@ -5,7 +5,7 @@ const Footer = () => {
     const date = new Date();
     const year = date.getFullYear();
     return (
-        <footer className='footer lg:flex items-center justify-around h-[300px] w-full bg-black text-secondary border-t-2 border-success'>
+        <footer className='footer lg:flex items-center justify-around h-[300px] w-full bg-black text-secondary border-t-2 border-success mt-3'>
             <div className='flex flex-col items-center mx-auto'>
                 <div className="text-3xl text-success text-center tracking-tighter font-bold">Arif Hasan</div>
                 <p>&copy; {year} All right reserved</p>
@@ -29,7 +29,9 @@ const Footer = () => {
                     </a>
                 </div>
             </div>
-            <div className='mx-auto'>Developed by <a href="https://web.facebook.com/nirimon123/" target='_blank' rel="noreferrer">Nurul Islam Rimon</a></div>
+            <div className='mx-auto'><p className="text-center">Developed by</p>
+                <a href="https://web.facebook.com/nirimon123/" target='_blank' rel="noreferrer" className='block mx-auto hover:text-success'>N I Rimon</a>
+            </div>
         </footer>
     );
 };

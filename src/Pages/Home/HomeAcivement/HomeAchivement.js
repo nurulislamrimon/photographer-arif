@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Achivement.css'
+import './HomeAchivement.css'
 
-const Achivement = () => {
+const HomeAchivement = () => {
     return (
         <div className='grid lg:grid-cols-2 gap-5 p-10'>
             <Link to='/achivements' className="relative hover:text-success lg:h-[40vw] cursor-pointer">
@@ -23,4 +23,4 @@ const Achivement = () => {
     );
 };
 
-export default Achivement;
+export default HomeAchivement;

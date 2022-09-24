@@ -1,30 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import usePhotos from '../../../CustomHooks/usePhotos';
+import Spinner from '../../../Utilities/Spinner';
 import './CustomCarousel.css';
 
 const CustomCarousel = () => {
-    const [allItems, setAllItems] = useState([]);
+    const { loading, setLoading, photos, setPhotos } = usePhotos();
     const [currentItem, setCurrentItem] = useState(0);
-    // fetch carousel items
-    useEffect(() => {
-        fetch('/test.json')
-            .then(res => res.json())
-            .then(data => setAllItems(data))
-    }, []);
     // carousel manual control
     const handleCarouselItem = (btn, e) => {
         if (btn === 'next') {
-            currentItem + 1 === allItems.length ? setCurrentItem(0) : setCurrentItem(currentItem + 1);
-        } else if (btn === 'prev') { currentItem === 0 ? setCurrentItem(allItems.length - 1) : setCurrentItem(currentItem - 1); }
+            currentItem + 1 === photos.length ? setCurrentItem(0) : setCurrentItem(currentItem + 1);
+        } else if (btn === 'prev') { currentItem === 0 ? setCurrentItem(photos.length - 1) : setCurrentItem(currentItem - 1); }
     }
     // carousel auto run
     useEffect(() => {
         const carouselInterval = setInterval(() => {
-            currentItem + 1 === allItems.length ? setCurrentItem(0) : setCurrentItem(currentItem + 1)
+            currentItem + 1 === photos.length ? setCurrentItem(0) : setCurrentItem(currentItem + 1)
         }, 10000);
         return () => clearInterval(carouselInterval)
-    }, [currentItem, allItems]);
-
+    }, [currentItem, photos]);
 
     // swipe slider
     document.addEventListener('touchstart', handleTouchStart, false);
@@ -58,10 +53,10 @@ const CustomCarousel = () => {
         if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
             if (xDiff > 0) {
                 /* right swipe */
-                currentItem + 1 === allItems.length ? setCurrentItem(0) : setCurrentItem(currentItem + 1);
+                currentItem + 1 === photos.length ? setCurrentItem(0) : setCurrentItem(currentItem + 1);
             } else {
                 /* left swipe */
-                currentItem === 0 ? setCurrentItem(allItems.length - 1) : setCurrentItem(currentItem - 1);
+                currentItem === 0 ? setCurrentItem(photos.length - 1) : setCurrentItem(currentItem - 1);
             }
         } else {
             if (yDiff > 0) {
@@ -75,12 +70,13 @@ const CustomCarousel = () => {
         yDown = null;
     };
 
+    if (loading) { return <Spinner /> }
     return (
         <div className='carousel-container w-full overflow-x-hidden relative lg:min-h-[100vh] overflow-hidden'>
-            <div className='bg-black -rotate-90 text-textPrimary social-btn-carousel absolute top-14 lg:top-24 -left-16 lg:-left-28 flex z-20'>
-                <a href="tel: +8801811324330" className='p-1 text-xs lg:text-lg lg:p-5 text-success hover:text-white'>Mobile</a>
-                <a href="mailto: arifhasan@gmal.com" className='p-1 text-xs lg:text-lg lg:p-5 text-success hover:text-white'>Mail</a>
-                <a href="https://www.facebook.com/profile.php?id=100008209128475" target='_blank' rel="noreferrer" className='p-1 pr-2 text-xs lg:text-lg lg:p-5 text-success hover:text-white'>Facebook </a>
+            <div className='bg-black -rotate-90 social-btn-carousel absolute top-36 -left-24 hidden lg:flex z-20 text-lg p-2 text-success'>
+                <a href="tel: +8801811324330" className='p-1  hover:text-white'>Mobile</a>
+                <a href="mailto: arifhasan@gmal.com" className='p-1  hover:text-white'>Mail</a>
+                <a href="https://www.facebook.com/profile.php?id=100008209128475" target='_blank' rel="noreferrer" className='p-1 pr-2  hover:text-white'>Facebook </a>
             </div>
 
             <div className="carousel-btn absolute top-2/4 flex justify-between w-full z-10 cursor-pointer rounded-full">
@@ -95,7 +91,7 @@ const CustomCarousel = () => {
             </div>
 
 
-            {allItems.map((item, index) => {
+            {photos.map((item, index) => {
                 return <div className={`carousel ${index === currentItem && 'active'}`}>
                     {currentItem === index &&
                         <>

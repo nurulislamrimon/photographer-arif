@@ -16,6 +16,7 @@ const Header = () => {
             style={({ isActive }) =>
                 isActive ? activeStyle : undefined
             }
+            className='hover:text-success'
         >Home</NavLink>,
 
         <NavLink style={({ isActive }) =>
@@ -38,15 +39,27 @@ const Header = () => {
             isActive ? activeStyle : undefined
         } onClick={() => openNav && setOpenNav(!openNav)} key='ContactMe' to='/contactMe' className='hover:text-success'>Contact Me</NavLink>,
     ]
+
+    const navbar = document.getElementById("navbar");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
+            navbar.style.backgroundColor = "black";
+            navbar.style.borderBottom = "1px solid gold";
+        } else {
+            navbar.style.backgroundColor = "transparent";
+            navbar.style.borderBottom = "none";
+        }
+    };
+
     return (
-        <div className="mb-16">
-            <header className='bg-black text-white h-16 flex justify-between px-5 items-center fixed top-0 w-full z-50 border-b-2 border-success'>
-                <NavLink to='/'>
-                    <h3 className='text-3xl text-success hover:text-white tracking-wider font-bold font-name'>Arif Hasan</h3>
-                    <p className='text-white hover:text-success'>Natural photographer</p>
+        <div>
+            <header id='navbar' className=' text-white h-fit flex justify-between items-center fixed top-0 w-full z-30 duration-1000'>
+                <NavLink to='/' className='bg-black p-2 lg:p-3'>
+                    <h3 className='text-xl text-success hover:text-white tracking-wider font-bold font-name'>Arif Hasan</h3>
+                    <p className='text-xs text-white hover:text-success'>Natural photographer</p>
                 </NavLink>
                 {/* small device menu btn */}
-                <label onClick={() => setOpenNav(!openNav)} className="lg:hidden p-5">
+                <label onClick={() => setOpenNav(!openNav)} className="lg:hidden p-5 cursor-pointer">
                     {!openNav ? <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg> : <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>}

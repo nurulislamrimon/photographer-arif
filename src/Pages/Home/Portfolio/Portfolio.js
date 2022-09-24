@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import usePhotos from '../../../CustomHooks/usePhotos';
+import Spinner from '../../../Utilities/Spinner';
 import './Portfolio.css'
 
 const Portfolio = () => {
-    const [items, setItems] = useState([])
-    useEffect(() => {
-        fetch('/test.json')
-            .then(res => res.json())
-            .then(data => setItems(data))
-    }, [])
+    const { loading, setLoading, photos, setPhotos } = usePhotos();
     const selectedItem = (e) => {
         const exist = document.getElementsByClassName('selected-category')[0];
         // remove from existing
@@ -16,8 +13,9 @@ const Portfolio = () => {
         // add in new
         e.target.classList.add('selected-category');
     }
+    if (loading) { return <Spinner /> }
     return (
-        <section className='p-3 lg:p-10'>
+        <section className='p-3 lg:p-10 my-8'>
             <div className="p-3 lg:p-10">
                 <h2 className="text-2xl lg:text-5xl font-bold text-white">Portfolio</h2>
             </div>
@@ -39,9 +37,9 @@ const Portfolio = () => {
                 <button onClick={selectedItem} className='py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success '>Micro</button>
             </div>
             <div className="py-10 grid items-center lg:grid-cols-4 gap-5">
-                {items.map(item => <img src={item?.picture} alt="img" className='hover:brightness-110' />)}
+                {photos.map(item => <img src={item?.picture} alt="img" className='hover:brightness-110' />)}
             </div>
-            <Link to='/photos' className="border rounded-3xl border-success px-10 py-3 text-white hover:bg-success duration-300">Go to Album</Link>
+            <Link to='/gallery' className="border rounded-3xl border-success px-10 py-3 text-white hover:bg-success duration-300">Go to Album</Link>
         </section>
     );
 };
