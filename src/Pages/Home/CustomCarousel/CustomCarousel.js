@@ -72,7 +72,7 @@ const CustomCarousel = () => {
 
     if (loading) { return <Spinner /> }
     return (
-        <div className='carousel-container w-full overflow-x-hidden relative lg:min-h-[100vh] overflow-hidden'>
+        <div className='carousel-container w-full overflow-x-hidden relative lg:min-h-[100vh] overflow-hidden mt-14'>
             <div className='bg-black -rotate-90 social-btn-carousel absolute top-40 -left-24 hidden lg:flex z-20 text-lg p-2 text-success'>
                 <a href="tel: +8801811324330" className='p-1  hover:text-white'>Mobile</a>
                 <a href="mailto: arifhasan@gmal.com" className='p-1  hover:text-white'>Mail</a>
@@ -80,22 +80,21 @@ const CustomCarousel = () => {
             </div>
 
             <div className="carousel-btn absolute top-2/4 flex justify-between w-full z-10 cursor-pointer rounded-full">
-                <div className="bg-[rgba(0,0,0,.4)] hover:bg-black text-white lg:p-5 rounded-tl-full rounded-bl-full" onClick={(e) => handleCarouselItem('prev', e)}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                <div className="bg-[rgba(0,0,0,.4)] hover:bg-black text-white lg:p-5 rounded-tl-full rounded-bl-full" onClick={(e) => handleCarouselItem('prev', e)}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                 </svg>
                 </div>
-                <div className="bg-[rgba(0,0,0,.4)] hover:bg-black text-white lg:p-5 rounded-tr-full rounded-br-full" onClick={(e) => handleCarouselItem('next', e)}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                <div className="bg-[rgba(0,0,0,.4)] hover:bg-black text-white lg:p-5 rounded-tr-full rounded-br-full" onClick={(e) => handleCarouselItem('next', e)}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
                 </div>
             </div>
 
 
             {photos.map((item, index) => {
-                return <div className={`carousel ${index === currentItem && 'active'}`}>
+                return <div key={index} className={`carousel ${index === currentItem && 'active'}`}>
                     {currentItem === index &&
                         <>
-
                             <img className='w-full h-full object-cover overflow-hidden' src={item?.picture} alt="" />
 
                             <div className='absolute inset-0 flex items-center justify-center'>

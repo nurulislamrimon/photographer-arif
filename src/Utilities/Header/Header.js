@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Header.css'
 
 const Header = () => {
     const [openNav, setOpenNav] = useState(false);
 
     const activeStyle = {
-        'text-decoration': 'underline',
-        'color': 'gold'
+        'textDecoration': 'underline',
+        'color': 'gold',
+        'fontWeight': '900'
     }
 
     const menus = [

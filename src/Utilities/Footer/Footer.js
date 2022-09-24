@@ -5,7 +5,7 @@ const Footer = () => {
     const date = new Date();
     const year = date.getFullYear();
     return (
-        <footer className='footer lg:flex items-center justify-around h-[300px] w-full bg-black text-secondary border-t-2 border-success mt-3'>
+        <footer className='footer lg:flex items-center justify-around h-[300px] w-full bg-black text-secondary border-t-2 border-success pt-3'>
             <div className='flex flex-col items-center mx-auto'>
                 <div className="text-3xl text-success text-center tracking-tighter font-bold">Arif Hasan</div>
                 <p>&copy; {year} All right reserved</p>
