@@ -1,0 +1,10 @@
+.about-profile-photo-container::after {
+    content: '';
+    position: absolute;
+    height: 30%;
+    width: 100%;
+    right: -10%;
+    top: 30%;
+    background: rgb(159, 161, 6);
+    z-index: -1;
+}

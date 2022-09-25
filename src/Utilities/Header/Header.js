@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
+import auth from '../../firebase.init';
 import './Header.css'
 
 const Header = () => {
     const [openNav, setOpenNav] = useState(false);
+    const [user] = useAuthState(auth);
 
     const activeStyle = {
         'textDecoration': 'underline',
@@ -40,6 +43,38 @@ const Header = () => {
             isActive ? activeStyle : undefined
         } onClick={() => openNav && setOpenNav(!openNav)} key='ContactMe' to='/contactMe' className='hover:text-success text-xl'>Contact Me</NavLink>,
     ]
+    const adminMenus = [
+        <NavLink onClick={() => openNav && setOpenNav(!openNav)} key='home' to='/home'
+
+            style={({ isActive }) =>
+                isActive ? activeStyle : undefined
+            }
+            className='hover:text-success text-xl'
+        >Home</NavLink>,
+
+        <NavLink style={({ isActive }) =>
+            isActive ? activeStyle : undefined
+        } onClick={() => openNav && setOpenNav(!openNav)} key='gallery' to='/gallery' className='hover:text-success text-xl'>Gallery</NavLink>,
+
+        <NavLink style={({ isActive }) =>
+            isActive ? activeStyle : undefined
+        } onClick={() => openNav && setOpenNav(!openNav)} key='achivement' to='/achivement' className='hover:text-success text-xl'>Achivement</NavLink>,
+        <NavLink style={({ isActive }) =>
+            isActive ? activeStyle : undefined
+        } onClick={() => openNav && setOpenNav(!openNav)} key='stories' to='/stories' className='hover:text-success text-xl'>Stories</NavLink>,
+        <NavLink style={({ isActive }) =>
+            isActive ? activeStyle : undefined
+        } onClick={() => openNav && setOpenNav(!openNav)} key='AboutMe' to='/aboutMe' className='hover:text-success text-xl'>About Me</NavLink>,
+        <NavLink style={({ isActive }) =>
+            isActive ? activeStyle : undefined
+        } onClick={() => openNav && setOpenNav(!openNav)} key='BuyNow' to='/buyNow' className='hover:text-success text-xl'>Buy Now</NavLink>,
+        <NavLink style={({ isActive }) =>
+            isActive ? activeStyle : undefined
+        } onClick={() => openNav && setOpenNav(!openNav)} key='ContactMe' to='/contactMe' className='hover:text-success text-xl'>Contact Me</NavLink>,
+        <NavLink style={({ isActive }) =>
+            isActive ? activeStyle : undefined
+        } onClick={() => openNav && setOpenNav(!openNav)} key='dashboard' to='/dashboard' className='hover:text-success text-xl'>Dashboard</NavLink>
+    ]
 
     /*  const navbar = document.getElementById("navbar");
      window.onscroll = function () {
@@ -68,13 +103,13 @@ const Header = () => {
                     </svg>}
                 </label>
                 {/* small device */}
-                <ul className={`absolute top-16 right-0 w-[100vw] flex flex-col p-10 shadow  bg-black gap-5 duration-700 z-50 select-none text-center ${!openNav && 'hidden'}`}>
-                    {menus}
+                <ul className={`absolute top-16 right-0 w-[100vw] h-[100vh] overflow-y-scroll flex flex-col p-10 pb-20 shadow  bg-black gap-5 duration-700 z-50 select-none text-center ${!openNav && 'hidden'}`}>
+                    {user?.uid ? adminMenus : menus}
                 </ul>
                 {/* large device */}
                 <div className="hidden lg:flex">
                     <ul className="menu menu-horizontal p-0 gap-5">
-                        {menus}
+                        {user?.uid ? adminMenus : menus}
                     </ul>
                 </div>
             </header>
