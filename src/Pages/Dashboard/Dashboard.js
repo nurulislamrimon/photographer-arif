@@ -15,13 +15,14 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+                    <ul className="menu p-4 overflow-y-auto w-80 bg-black glass text-success gap-5">
                         <li><Link to='item1'>Sidebar Item 1</Link></li>
+                        <li>
+                            <button onClick={() => signOut(auth)} className='btn btn-neutral glass hover:btn-primary'>Logout</button></li>
                     </ul>
 
                 </div>
             </div>
-            <button onClick={() => signOut(auth)} className='btn'>Logout</button>
         </div>
     );
 };

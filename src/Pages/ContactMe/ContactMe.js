@@ -15,7 +15,7 @@ const ContactMe = () => {
             </div>
             <div className="grid lg:grid-cols-3 items-center px-3 lg:px-10 pb-36">
                 <div className=' lg:order-3'>
-                    <iframe className='w-full rounded-3xl' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7355.229560148816!2d91.23664317243222!3d22.81673362956262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3753582ff63291b1%3A0x90d044507d7b6ecd!2sChaprasir%20Hat!5e0!3m2!1sen!2sbd!4v1664029548596!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" height={500} title='Chaprashirhat maps'></iframe>
+                    <iframe className='w-full rounded-3xl' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7355.229560148816!2d91.23664317243222!3d22.81673362956262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3753582ff63291b1%3A0x90d044507d7b6ecd!2sChaprasir%20Hat!5e0!3m2!1sen!2sbd!4v1664029548596!5m2!1sen!2sbd" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" height={500} title='Chaprashirhat maps'></iframe>
                 </div>
                 {/* second section */}
                 <div className='text-center py-16 lg:order-2'>
