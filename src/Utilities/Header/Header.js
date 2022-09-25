@@ -8,7 +8,7 @@ const Header = () => {
     const activeStyle = {
         'textDecoration': 'underline',
         'color': 'gold',
-        'fontWeight': '900'
+        'fontWeight': '700'
     }
 
     const menus = [
@@ -17,28 +17,28 @@ const Header = () => {
             style={({ isActive }) =>
                 isActive ? activeStyle : undefined
             }
-            className='hover:text-success'
+            className='hover:text-success text-xl'
         >Home</NavLink>,
 
         <NavLink style={({ isActive }) =>
             isActive ? activeStyle : undefined
-        } onClick={() => openNav && setOpenNav(!openNav)} key='gallery' to='/gallery' className='hover:text-success'>Gallery</NavLink>,
+        } onClick={() => openNav && setOpenNav(!openNav)} key='gallery' to='/gallery' className='hover:text-success text-xl'>Gallery</NavLink>,
 
         <NavLink style={({ isActive }) =>
             isActive ? activeStyle : undefined
-        } onClick={() => openNav && setOpenNav(!openNav)} key='achivement' to='/achivement' className='hover:text-success'>Achivement</NavLink>,
+        } onClick={() => openNav && setOpenNav(!openNav)} key='achivement' to='/achivement' className='hover:text-success text-xl'>Achivement</NavLink>,
         <NavLink style={({ isActive }) =>
             isActive ? activeStyle : undefined
-        } onClick={() => openNav && setOpenNav(!openNav)} key='stories' to='/stories' className='hover:text-success'>Stories</NavLink>,
+        } onClick={() => openNav && setOpenNav(!openNav)} key='stories' to='/stories' className='hover:text-success text-xl'>Stories</NavLink>,
         <NavLink style={({ isActive }) =>
             isActive ? activeStyle : undefined
-        } onClick={() => openNav && setOpenNav(!openNav)} key='AboutMe' to='/aboutMe' className='hover:text-success'>About Me</NavLink>,
+        } onClick={() => openNav && setOpenNav(!openNav)} key='AboutMe' to='/aboutMe' className='hover:text-success text-xl'>About Me</NavLink>,
         <NavLink style={({ isActive }) =>
             isActive ? activeStyle : undefined
-        } onClick={() => openNav && setOpenNav(!openNav)} key='BuyNow' to='/buyNow' className='hover:text-success'>Buy Now</NavLink>,
+        } onClick={() => openNav && setOpenNav(!openNav)} key='BuyNow' to='/buyNow' className='hover:text-success text-xl'>Buy Now</NavLink>,
         <NavLink style={({ isActive }) =>
             isActive ? activeStyle : undefined
-        } onClick={() => openNav && setOpenNav(!openNav)} key='ContactMe' to='/contactMe' className='hover:text-success'>Contact Me</NavLink>,
+        } onClick={() => openNav && setOpenNav(!openNav)} key='ContactMe' to='/contactMe' className='hover:text-success text-xl'>Contact Me</NavLink>,
     ]
 
     /*  const navbar = document.getElementById("navbar");
@@ -63,8 +63,8 @@ const Header = () => {
                 </NavLink>
                 {/* small device menu btn */}
                 <label onClick={() => setOpenNav(!openNav)} className="lg:hidden p-5 cursor-pointer">
-                    {!openNav ? <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg> : <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    {!openNav ? <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg> : <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>}
                 </label>
                 {/* small device */}

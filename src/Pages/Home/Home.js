@@ -6,6 +6,7 @@ import Portfolio from './Portfolio/Portfolio';
 import SimpleIntro from './SimpleIntro/SimpleIntro';
 
 const Home = () => {
+
     return (
         <>
             <CustomCarousel />
