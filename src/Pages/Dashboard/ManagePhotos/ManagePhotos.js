@@ -6,7 +6,7 @@ import AddNewItem from '../../../Utilities/Modals/AddNewItem';
 import PhotoTable from './PhotoTable';
 
 const ManagePhotos = () => {
-    const [photos, loading, refetch, error] = usePhotos();
+    const [photos, loading, refetch, error] = usePhotos('', 0);
     const [addNewPhoto, setAddNewPhoto] = useState(false);
     return (
         <div className='relative min-h-screen p-5'>

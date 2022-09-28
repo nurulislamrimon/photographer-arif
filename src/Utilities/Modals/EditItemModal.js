@@ -2,10 +2,13 @@ import React from 'react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import useCategory from '../../CustomHooks/useCategory';
 import useEditSubmit from '../../CustomHooks/useEditSubmit';
 import Spinner from '../Spinner';
 
 const EditItemModal = ({ editItem, refetch, setEditItem, fetchTo }) => {
+    const [categories, cLoading] = useCategory();
+
     const submitData = useEditSubmit();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [loading, setLoading] = useState(false);
@@ -56,10 +59,10 @@ const EditItemModal = ({ editItem, refetch, setEditItem, fetchTo }) => {
                             </label>}
                         </div>
                         <div className="form-control w-full">
-                            <input {...register("album", { required: true })} value={editItem?.album || ''} className="input input-bordered w-full" />
-                            {errors.album && <label className="label ">
-                                <span className="label-text-alt text-red-600">This field is required!</span>
-                            </label>}
+                            <select className="input input-bordered w-full" {...register("album", { required: true })} value={editItem?.album}>
+                                {categories?.map(category => <option key={category?._id} className='text-black' value={category?.category}>
+                                    {category.category}</option>)}
+                            </select>
                         </div>
                         <div className="form-control w-full">
                             <textarea rows={30} cols={40} {...register("about", { required: true })} value={editItem?.about || ''} className="input input-bordered w-full" />

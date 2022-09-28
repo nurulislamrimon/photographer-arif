@@ -1,19 +1,24 @@
 import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import usePhotos from '../../../CustomHooks/usePhotos';
 import Spinner from '../../../Utilities/Spinner';
 import './Portfolio.css'
 
 const Portfolio = () => {
-    const [photos, loading, refetch, error] = usePhotos()
+    const [album, setAlbum] = useState('');
+    const [photos, loading, refetch, error] = usePhotos(album, 8);
     const selectedItem = (e) => {
         const exist = document.getElementsByClassName('selected-category')[0];
         // remove from existing
         exist.classList.remove('selected-category');
         // add in new
         e.target.classList.add('selected-category');
+
+        e.target.innerText === 'All' ?
+            setAlbum('') :
+            setAlbum(e.target.innerText);
     }
-    if (loading) { return <Spinner /> }
     return (
         <section className='p-3 lg:p-10 my-8'>
             <div className="p-3 lg:p-10">
@@ -36,11 +41,12 @@ const Portfolio = () => {
                 <button onClick={selectedItem} className='py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success '>Wildlife</button>
                 <button onClick={selectedItem} className='py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success '>Micro</button>
             </div>
+            {loading && <Spinner />}
             <div className="py-10 grid items-center lg:grid-cols-4 gap-5">
                 {photos?.map((item, index) =>
                     <div data-aos="fade-up"
                         data-aos-easing="linear"
-                        data-aos-duration="1500" key={index}>
+                        data-aos-duration="1000" key={index}>
                         <img src={item?.picture} alt="img" className='hover:brightness-110' />
                     </div>
                 )}

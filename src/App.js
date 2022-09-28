@@ -19,9 +19,11 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import Greetings from './Pages/Dashboard/Greetings';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import useCategory from './CustomHooks/useCategory';
 
 function App() {
-  AOS.init()
+  const [category, loading] = useCategory();
+  AOS.init();
 
   return (
     <div className="App bg-primary overflow-x-hidden relative">
