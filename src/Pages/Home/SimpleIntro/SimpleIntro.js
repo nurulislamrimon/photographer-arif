@@ -20,7 +20,7 @@ const SimpleIntro = () => {
             </div>
             <div className='py-10 lg:mt-24'>
                 <div className='about-photo-container w-3/4 mx-auto h-fit z-10'>
-                    <img src="https://scontent.fdac116-1.fna.fbcdn.net/v/t1.6435-9/121833144_2771357409814536_260910336032861344_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_eui2=AeEts9idxdWmhIgXMS12emr29ZmB45S63JT1mYHjlLrclJwXNJkYAqP9aZofKNfZR89A_ldnaAg_bv5eiw-iV99Q&_nc_ohc=vEkjFH40rcYAX_mmxsu&_nc_ht=scontent.fdac116-1.fna&oh=00_AT9_AgB_iTI6drKSFftgg2CP7nGkBH9dtenhII0COuGq6g&oe=634F7464" alt="img" className='w-full grayscale hover:translate-x-5 hover:translate-y-5 duration-700' />
+                    <img data-aos="flip-right" src="https://scontent.fdac116-1.fna.fbcdn.net/v/t1.6435-9/121833144_2771357409814536_260910336032861344_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_eui2=AeEts9idxdWmhIgXMS12emr29ZmB45S63JT1mYHjlLrclJwXNJkYAqP9aZofKNfZR89A_ldnaAg_bv5eiw-iV99Q&_nc_ohc=vEkjFH40rcYAX_mmxsu&_nc_ht=scontent.fdac116-1.fna&oh=00_AT9_AgB_iTI6drKSFftgg2CP7nGkBH9dtenhII0COuGq6g&oe=634F7464" alt="img" className='w-full grayscale hover:translate-x-5 hover:translate-y-5 duration-700' />
                 </div>
             </div>
         </div>

@@ -5,7 +5,7 @@ import Spinner from '../../../Utilities/Spinner';
 import './Portfolio.css'
 
 const Portfolio = () => {
-    const { loading, setLoading, photos, setPhotos } = usePhotos();
+    const [photos, loading, refetch, error] = usePhotos();
     const selectedItem = (e) => {
         const exist = document.getElementsByClassName('selected-category')[0];
         // remove from existing
@@ -37,7 +37,7 @@ const Portfolio = () => {
                 <button onClick={selectedItem} className='py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success '>Micro</button>
             </div>
             <div className="py-10 grid items-center lg:grid-cols-4 gap-5">
-                {photos.map((item, index) => <img key={index} src={item?.picture} alt="img" className='hover:brightness-110' />)}
+                {photos?.map((item, index) => <img key={index} src={item?.picture} alt="img" className='hover:brightness-110' />)}
             </div>
             <Link to='/gallery' className="border rounded-3xl border-success px-10 py-3 text-white hover:bg-success duration-300">Go to Album</Link>
         </section>

@@ -4,6 +4,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import Spinner from '../../Utilities/Spinner';
 
 
 const Login = () => {
@@ -18,6 +19,9 @@ const Login = () => {
 
     const onSubmit = data => signInWithEmailAndPassword(data?.email, data?.password);
 
+    if (loading) {
+        return <Spinner />
+    }
     if (user) {
         return <Navigate to='/dashboard' />
     }

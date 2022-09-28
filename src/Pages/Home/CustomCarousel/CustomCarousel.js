@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import usePhotos from '../../../CustomHooks/usePhotos';
+import useCarousel from '../../../CustomHooks/useCarousel';
 import Spinner from '../../../Utilities/Spinner';
 import './CustomCarousel.css';
 
 const CustomCarousel = () => {
-    const { loading, setLoading, photos, setPhotos } = usePhotos();
+    const { loading, setLoading, photos, setPhotos } = useCarousel();
     const [currentItem, setCurrentItem] = useState(0);
     // carousel manual control
     const handleCarouselItem = (btn, e) => {
@@ -69,7 +69,6 @@ const CustomCarousel = () => {
         xDown = null;
         yDown = null;
     };
-
     if (loading) { return <Spinner /> }
     return (
         <div className='carousel-container w-full overflow-x-hidden relative lg:min-h-[100vh] overflow-hidden mt-14'>

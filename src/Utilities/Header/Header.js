@@ -73,7 +73,7 @@ const Header = () => {
         } onClick={() => openNav && setOpenNav(!openNav)} key='ContactMe' to='/contactMe' className='hover:text-success text-xl'>Contact Me</NavLink>,
         <NavLink style={({ isActive }) =>
             isActive ? activeStyle : undefined
-        } onClick={() => openNav && setOpenNav(!openNav)} key='dashboard' to='/dashboard' className='hover:text-success text-xl'>Dashboard</NavLink>
+        } onClick={() => openNav && setOpenNav(!openNav)} key='dashboard' to='/dashboard/greetings' className='hover:text-success text-xl'>Dashboard</NavLink>
     ]
 
     /*  const navbar = document.getElementById("navbar");

@@ -8,25 +8,31 @@ const Dashboard = () => {
         <div className='mt-14 lg:mt-20 relative'>
             <div className="drawer drawer-mobile">
                 <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col items-center justify-center">
+                <div className="drawer-content">
 
                     <Outlet />
-
-                    <label htmlFor="dashboard-drawer" className="btn btn-primary drawer-button lg:hidden absolute top-0 left-0 gap-1 flex flex-col">
-                        <div className="w-3 bg-success h-0.5"></div>
-                        <div className="w-3 bg-success h-0.5"></div>
-                    </label>
 
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-                    <ul className="menu p-4 overflow-y-auto w-80 bg-black glass text-success gap-5">
+                    <ul className="menu p-4 overflow-y-auto w-80 bg-black glass text-success gap-1 lg:gap-2">
 
                         <li>
-                            <Link to='item1'>Sidebar Item 1</Link>
+                            <Link to='managePhotos'>Manage Photos</Link>
                         </li>
                         <li>
-                            <button onClick={() => signOut(auth)} className='btn btn-neutral glass hover:btn-primary'>Logout</button></li>
+                            <Link to='manageCarousel'>Manage Carousel Items</Link>
+                        </li>
+                        <li>
+                            <Link to='manageAchivements'>Manage Achivements</Link>
+                        </li>
+                        <li>
+                            <button onClick={() => signOut(auth)} className='btn btn-neutral glass hover:btn-primary mt-5'>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                                </svg>
+
+                            </button></li>
                     </ul>
 
                 </div>

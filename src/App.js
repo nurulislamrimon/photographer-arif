@@ -4,8 +4,6 @@ import AboutMe from './Pages/AboutMe/AboutMe';
 import Achivement from './Pages/Achivement/Achivement';
 import BuyNow from './Pages/BuyNow/BuyNow';
 import ContactMe from './Pages/ContactMe/ContactMe';
-import Dashboard from './Pages/Dashboard/Dashboard';
-import Item1 from './Pages/Dashboard/Item1';
 import Gallery from './Pages/Gallery/Gallery';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
@@ -14,14 +12,20 @@ import Stories from './Pages/Stories/Stories';
 import Footer from './Utilities/Footer/Footer';
 import Header from './Utilities/Header/Header';
 import RequireAuth from './Utilities/RequireAuth';
+import ManageCarousel from './Pages/Dashboard/ManageCarousel/ManageCarousel';
+import ManagePhotos from './Pages/Dashboard/ManagePhotos/ManagePhotos';
+import ManageAchivements from './Pages/Dashboard/ManageAchivement/ManageAchivements';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import Greetings from './Pages/Dashboard/Greetings';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
-
+  AOS.init()
 
   return (
     <div className="App bg-primary overflow-x-hidden relative">
       <Header />
-
 
       <Routes>
         <Route path='/' element={<Home />} />
@@ -38,7 +42,25 @@ function App() {
             <Dashboard />
           </RequireAuth>
         } >
-          <Route path='item1' element={<Item1 />} />
+          <Route path='greetings' element={
+            <RequireAuth>
+              <Greetings />
+            </RequireAuth>
+          } />
+          <Route path='manageCarousel' element={
+            <RequireAuth>
+              <ManageCarousel />
+            </RequireAuth>
+          } />
+          <Route path='managePhotos' element={
+            <RequireAuth>
+              <ManagePhotos />
+            </RequireAuth>} />
+          <Route path='manageAchivements' element={
+            <RequireAuth>
+              <ManageAchivements />
+            </RequireAuth>
+          } />
         </Route>
         <Route path='/*' element={<NotFound />} />
       </Routes>

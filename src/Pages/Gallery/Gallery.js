@@ -4,7 +4,7 @@ import Spinner from '../../Utilities/Spinner';
 import './Gallery.css'
 
 const Gallery = () => {
-    const { loading, setLoading, photos, setPhotos } = usePhotos();
+    const [photos, loading, refetch, error] = usePhotos();
 
     const selectedItem = (e) => {
         const exist = document.getElementsByClassName('selected-category')[0];
@@ -40,8 +40,12 @@ const Gallery = () => {
                 <button onClick={selectedItem} className='py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success'>Wildlife</button>
                 <button onClick={selectedItem} className='py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success'>Micro</button>
             </div>
-            <div className="py-10 grid items-center lg:grid-cols-4 gap-5">
-                {photos.map((item, index) => <img key={index} src={item?.picture} alt="img" className='hover:brightness-110' />)}
+            <div className="py-10 grid items-center lg:grid-cols-4 gap-5 grid-flow-dense">
+                {photos.map((item, index) =>
+                    <div data-aos="zoom-in-up">
+                        <img key={index} src={item?.picture} alt="img" className='hover:brightness-110' />
+                    </div>
+                )}
             </div>
         </section>
     );
