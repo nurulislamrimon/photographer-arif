@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import usePhotos from '../../../CustomHooks/usePhotos';
 import DrawerBtn from '../DrawerBtn';
-import AddNewPhoto from './AddNewPhoto';
+import AddNewItem from '../../../Utilities/Modals/AddNewItem';
 import PhotoTable from './PhotoTable';
 
 const ManagePhotos = () => {
@@ -14,8 +14,8 @@ const ManagePhotos = () => {
             {/* small size hamburger */}
             <DrawerBtn />
             <h2 className="font-bold text-transparent text-xl lg:text-5xl bg-clip-text bg-gradient-to-tr from-red-600 to-blue-600 pb-5 text-center select-none">Manage Photos</h2>
-            <PhotoTable photos={photos} loading={loading} refetch={refetch} error={error} />
-            {addNewPhoto && <AddNewPhoto refetch={refetch} setAddNewPhoto={setAddNewPhoto} />}
+            <PhotoTable items={photos} loading={loading} refetch={refetch} error={error} />
+            {addNewPhoto && <AddNewItem refetch={refetch} setAddNewItem={setAddNewPhoto} fetchTo='photo' />}
         </div>
     );
 };

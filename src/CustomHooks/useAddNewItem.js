@@ -2,8 +2,8 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const useAddNewItem = () => {
-    const addNewItem = async (data, type) => {
-        await fetch(`http://localhost:5000/${type}`, {
+    const addNewItem = async (data, fetchTo) => {
+        await fetch(`http://localhost:5000/${fetchTo}`, {
             method: 'post',
             headers: {
                 'content-type': 'application/json'

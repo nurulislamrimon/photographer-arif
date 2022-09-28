@@ -5,21 +5,21 @@ import Spinner from '../../../Utilities/Spinner';
 import './CustomCarousel.css';
 
 const CustomCarousel = () => {
-    const { loading, setLoading, photos, setPhotos } = useCarousel();
+    const [items, loading, refetch, error] = useCarousel();
     const [currentItem, setCurrentItem] = useState(0);
     // carousel manual control
     const handleCarouselItem = (btn, e) => {
         if (btn === 'next') {
-            currentItem + 1 === photos.length ? setCurrentItem(0) : setCurrentItem(currentItem + 1);
-        } else if (btn === 'prev') { currentItem === 0 ? setCurrentItem(photos.length - 1) : setCurrentItem(currentItem - 1); }
+            currentItem + 1 === items.length ? setCurrentItem(0) : setCurrentItem(currentItem + 1);
+        } else if (btn === 'prev') { currentItem === 0 ? setCurrentItem(items.length - 1) : setCurrentItem(currentItem - 1); }
     }
     // carousel auto run
     useEffect(() => {
         const carouselInterval = setInterval(() => {
-            currentItem + 1 === photos.length ? setCurrentItem(0) : setCurrentItem(currentItem + 1)
+            currentItem + 1 === items.length ? setCurrentItem(0) : setCurrentItem(currentItem + 1)
         }, 7000);
         return () => clearInterval(carouselInterval)
-    }, [currentItem, photos]);
+    }, [currentItem, items]);
 
     // swipe slider
     document.addEventListener('touchstart', handleTouchStart, false);
@@ -53,10 +53,10 @@ const CustomCarousel = () => {
         if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
             if (xDiff > 0) {
                 /* right swipe */
-                currentItem + 1 === photos.length ? setCurrentItem(0) : setCurrentItem(currentItem + 1);
+                currentItem + 1 === items.length ? setCurrentItem(0) : setCurrentItem(currentItem + 1);
             } else {
                 /* left swipe */
-                currentItem === 0 ? setCurrentItem(photos.length - 1) : setCurrentItem(currentItem - 1);
+                currentItem === 0 ? setCurrentItem(items.length - 1) : setCurrentItem(currentItem - 1);
             }
         } else {
             if (yDiff > 0) {
@@ -90,7 +90,7 @@ const CustomCarousel = () => {
             </div>
 
 
-            {photos.map((item, index) => {
+            {items?.map((item, index) => {
                 return <div key={index} className={`carousel ${index === currentItem && 'active'}`}>
                     {currentItem === index &&
                         <>
