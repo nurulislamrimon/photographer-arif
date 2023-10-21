@@ -14,7 +14,8 @@ export const achivements = [
   {
     id: 3,
     title: "NSTU Photo Contest 2023",
-    description: "Thank you NSTU Photography Club",
+    description:
+      "Thank you Noakhali Science & Technology University Photography Club",
     photoUrl: "./images/achivements/arif-achivement-3.jpg",
   },
 ];

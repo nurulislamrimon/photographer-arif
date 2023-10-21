@@ -1,13 +1,29 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* header */
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap");
+/* poppins */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@700&display=swap");
+/* style */
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+/* name style */
+@import url("https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+/* ======================= */
+/* scrollbar customization */
+/* ======================= */
+body::-webkit-scrollbar {
+  width: 5px;
+  background: linear-gradient(#0c043e, #340234);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(#340234, #0c043e);
+  border-bottom: 25px solid yellow;
+  border-top: 25px solid yellow;
+  border-radius: 10px;
 }

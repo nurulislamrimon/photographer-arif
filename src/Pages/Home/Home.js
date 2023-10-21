@@ -9,6 +9,7 @@ const Home = () => {
   return (
     <>
       <CustomCarouselFunctionality />
+
       <SimpleIntro />
       <div className="flex justify-center">
         <h1 className="text-5xl text-white border-b inline-block pb-2 border-success">

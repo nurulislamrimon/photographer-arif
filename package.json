@@ -21,6 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "tailwind-build": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -44,6 +45,8 @@
     ]
   },
   "devDependencies": {
-    "tailwindcss": "^3.1.8"
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.3"
   }
 }

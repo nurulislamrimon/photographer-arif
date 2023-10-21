@@ -1,12 +1,14 @@
+import "./CustomCarousel.css";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import useCarousel from "../../../CustomHooks/useCarousel";
 import Spinner from "../../../Utilities/Spinner";
-import "./CustomCarousel.css";
-import CustomCarouselMarkup from "./CustomCarouselMarkup";
+import SocialMediaBtn from "./CarouselComponents/SocialMediaBtn";
+import CarouselNextPrevBtn from "./CarouselComponents/CarouselNextPrevBtn";
+import CarouselItemRender from "./CarouselComponents/CarouselItemRender";
 
 const CustomCarouselFunctionality = () => {
   const { data: carouselItems, loading, refetch, error } = useCarousel();
+
   const [currentItem, setCurrentItem] = useState(0);
   // carousel manual control
   const handleCarouselItem = (btn, e) => {
@@ -89,11 +91,22 @@ const CustomCarouselFunctionality = () => {
     return <Spinner />;
   }
   return (
-    <CustomCarouselMarkup
-      handleCarouselItem={handleCarouselItem}
-      carouselItems={carouselItems}
-      currentItem={currentItem}
-    />
+    <div className="carousel-container w-full h-[300px] relative lg:h-[100vh] overflow-hidden mt-14">
+      <SocialMediaBtn />
+
+      <CarouselNextPrevBtn handleCarouselItem={handleCarouselItem} />
+
+      {carouselItems?.map((item, index) => {
+        return (
+          <div
+            key={index}
+            className={`carousel ${index === currentItem && "active"}`}
+          >
+            {currentItem === index && <CarouselItemRender item={item} />}
+          </div>
+        );
+      })}
+    </div>
   );
 };
 
