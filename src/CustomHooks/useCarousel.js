@@ -1,13 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
+import { apiUrl } from "../Utilities/apiUrl";
+import { useEffect, useState } from "react";
 
-const usePhotos = () => {
-    const { isLoading, error, data, refetch } = useQuery(['repoData'], () =>
-        fetch('http://localhost:5000/carousels').then(res =>
-            res.json()
-        )
-    )
+const useCarousel = () => {
+  const { isLoading, error, data, refetch } = useQuery(["repoData"], () =>
+    fetch(`${apiUrl}/carousels`).then((res) => res.json())
+  );
 
-    return [data, isLoading, refetch, error]
+  return { data, isLoading, error, refetch };
 };
 
-export default usePhotos;
+export default useCarousel;
