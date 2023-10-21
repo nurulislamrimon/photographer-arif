@@ -4,14 +4,16 @@ import { Link } from "react-router-dom";
 import usePhotos from "../../../CustomHooks/usePhotos";
 import Spinner from "../../../Utilities/Spinner";
 import "./Portfolio.css";
+import PhotoTypesMenu from "../../Components/PhotoTypesMenu/PhotoTypesMenu";
 
 const Portfolio = () => {
   const [album, setAlbum] = useState("");
   const { data: photos, isLoading, refetch, error } = usePhotos(album, 8);
-  const selectedItem = (e) => {
+
+  const handleSelectedItem = (e) => {
     const exist = document.getElementsByClassName("selected-category")[0];
     // remove from existing
-    exist.classList.remove("selected-category");
+    exist?.classList?.remove("selected-category");
     // add in new
     e.target.classList.add("selected-category");
 
@@ -22,99 +24,10 @@ const Portfolio = () => {
       <div className="p-3 lg:p-10">
         <h2 className="text-2xl lg:text-5xl font-bold text-white">Portfolio</h2>
       </div>
-      <div className="categories-btn-container flex gap-2 flex-wrap justify-center">
-        <button
-          onClick={selectedItem}
-          className="py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success  selected-category"
-        >
-          All
-        </button>
-        <button
-          onClick={selectedItem}
-          className="py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success "
-        >
-          Aerial
-        </button>
-        <button
-          onClick={selectedItem}
-          className="py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success "
-        >
-          Architecture
-        </button>
-        <button
-          onClick={selectedItem}
-          className="py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success "
-        >
-          Beautiful Bangladesh
-        </button>
-        <button
-          onClick={selectedItem}
-          className="py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success "
-        >
-          Best Shots
-        </button>
-        <button
-          onClick={selectedItem}
-          className="py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success "
-        >
-          Black And White
-        </button>
-        <button
-          onClick={selectedItem}
-          className="py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success "
-        >
-          Documentary
-        </button>
-        <button
-          onClick={selectedItem}
-          className="py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success "
-        >
-          Festival And Tradition
-        </button>
-        <button
-          onClick={selectedItem}
-          className="py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success "
-        >
-          Lifestyle
-        </button>
-        <button
-          onClick={selectedItem}
-          className="py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success "
-        >
-          Mobile Photo
-        </button>
-        <button
-          onClick={selectedItem}
-          className="py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success "
-        >
-          Portrait
-        </button>
-        <button
-          onClick={selectedItem}
-          className="py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success "
-        >
-          Street
-        </button>
-        <button
-          onClick={selectedItem}
-          className="py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success "
-        >
-          Travel
-        </button>
-        <button
-          onClick={selectedItem}
-          className="py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success "
-        >
-          Wildlife
-        </button>
-        <button
-          onClick={selectedItem}
-          className="py-2 px-3 text-neutral capitalize text-xl rounded-3xl hover:text-success "
-        >
-          Micro
-        </button>
-      </div>
+      <PhotoTypesMenu handleSelectedItem={handleSelectedItem} />
+      {/* loading ======= */}
       {isLoading && <Spinner />}
+      {/* photo gallery======== */}
       <div className="py-10 grid items-center lg:grid-cols-4 gap-5">
         {photos?.map((item, index) => (
           <div

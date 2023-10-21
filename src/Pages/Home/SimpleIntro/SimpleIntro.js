@@ -41,8 +41,10 @@ const SimpleIntro = () => {
             data-aos="flip-right"
             data-aos-duration="1000"
             src="./images/arif-hasan.jpg"
+            // src="./images/funny-arif.jpg"
             alt="img"
             className="w-full grayscale hover:translate-x-5 hover:translate-y-5 duration-700"
+            loading="lazy"
           />
         </div>
       </div>

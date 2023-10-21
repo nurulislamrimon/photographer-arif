@@ -3,17 +3,17 @@ import { useState } from "react";
 import { apiUrl } from "../Utilities/apiUrl";
 
 const useCategory = () => {
-  const [category, setCategory] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     fetch(`${apiUrl}/category`)
       .then((res) => res.json())
-      .then((data) => setCategory(data));
+      .then((data) => setCategories(data));
     setLoading(false);
   }, []);
-  return [category, loading];
+  return { categories, loading };
 };
 
 export default useCategory;

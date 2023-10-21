@@ -22,7 +22,7 @@ import "aos/dist/aos.css";
 import useCategory from "./CustomHooks/useCategory";
 
 function App() {
-  const [category, loading] = useCategory();
+  const { categories, loading } = useCategory();
   AOS.init();
 
   return (
