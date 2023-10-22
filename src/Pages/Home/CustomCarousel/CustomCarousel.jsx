@@ -6,7 +6,7 @@ import SocialMediaBtn from "./CarouselComponents/SocialMediaBtn";
 import CarouselNextPrevBtn from "./CarouselComponents/CarouselNextPrevBtn";
 import CarouselItemRender from "./CarouselComponents/CarouselItemRender";
 
-const CustomCarouselFunctionality = () => {
+const CustomCarousel = () => {
   const { data: carouselItems, loading, refetch, error } = useCarousel();
 
   const [currentItem, setCurrentItem] = useState(0);
@@ -28,7 +28,7 @@ const CustomCarouselFunctionality = () => {
       currentItem + 1 === carouselItems?.length
         ? setCurrentItem(0)
         : setCurrentItem(currentItem + 1);
-    }, 7000);
+    }, 10000);
     return () => clearInterval(carouselInterval);
   }, [currentItem, carouselItems]);
 
@@ -110,4 +110,4 @@ const CustomCarouselFunctionality = () => {
   );
 };
 
-export default CustomCarouselFunctionality;
+export default CustomCarousel;

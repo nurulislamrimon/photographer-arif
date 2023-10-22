@@ -1,5 +1,5 @@
 import React from "react";
-import CustomCarouselFunctionality from "./CustomCarousel/CustomCarouselFunctionality";
+import CustomCarousel from "./CustomCarousel/CustomCarousel";
 import "./Home.css";
 import HomeAchivement from "./HomeAcivement/HomeAchivement";
 import Portfolio from "./Portfolio/Portfolio";
@@ -8,7 +8,7 @@ import SimpleIntro from "./SimpleIntro/SimpleIntro";
 const Home = () => {
   return (
     <>
-      <CustomCarouselFunctionality />
+      <CustomCarousel />
 
       <SimpleIntro />
       <div className="flex justify-center">
