@@ -91,7 +91,7 @@ const CustomCarousel = () => {
     return <Spinner />;
   }
   return (
-    <div className="carousel-container w-full h-[300px] relative lg:h-[100vh] overflow-hidden mt-14">
+    <div className="carousel-container w-full h-[300px] relative md:h-[100vh] overflow-hidden mt-14">
       <SocialMediaBtn />
 
       <CarouselNextPrevBtn handleCarouselItem={handleCarouselItem} />
