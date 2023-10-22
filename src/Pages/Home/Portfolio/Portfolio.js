@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import usePhotos from "../../../CustomHooks/usePhotos";
 import Spinner from "../../../Utilities/Spinner";
 import "./Portfolio.css";
-import PhotoTypesMenu from "../../Components/PhotoTypesMenu/PhotoTypesMenu";
+import PhotoTypesMenu from "../../../Components/PhotoTypesMenu/PhotoTypesMenu";
 
 const Portfolio = () => {
   const [album, setAlbum] = useState("");
@@ -28,20 +28,17 @@ const Portfolio = () => {
       {/* loading ======= */}
       {isLoading && <Spinner />}
       {/* photo gallery======== */}
-      <div className="py-10 grid items-center lg:grid-cols-4 gap-5">
+      <div className="py-10 grid md:grid-cols-3 lg:grid-cols-4 gap-5 grid-flow-dense">
         {photos?.map((item, index) => (
-          <div
+          <img
             data-aos="fade-up"
             data-aos-easing="linear"
             data-aos-duration="1000"
             key={index}
-          >
-            <img
-              src={item?.picture}
-              alt="img"
-              className="hover:brightness-110"
-            />
-          </div>
+            src={item?.picture}
+            alt="img"
+            className="hover:brightness-110"
+          />
         ))}
       </div>
       <Link

@@ -1,5 +1,5 @@
 import React from "react";
-import useCategory from "../../../CustomHooks/useCategory";
+import useCategory from "../../CustomHooks/useCategory";
 
 const PhotoTypesMenu = ({ handleSelectedItem }) => {
   const { categories } = useCategory();
