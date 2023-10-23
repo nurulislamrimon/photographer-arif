@@ -5,7 +5,7 @@ const CarouselItemRender = ({ item }) => {
   return (
     <>
       <img
-        className="w-full h-[300px] md:h-full overflow-hidden opacity-70 my-auto object-cover object-center"
+        className="w-full h-[calc(100vh-50px)] overflow-hidden opacity-70 my-auto object-cover object-center"
         src={item?.picture}
         alt=""
       />

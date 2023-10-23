@@ -2387,6 +2387,10 @@ body[dir="rtl"] .checkbox:checked,
   inset: 0px;
 }
 
+.-left-24 {
+  left: -6rem;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -2415,24 +2419,20 @@ body[dir="rtl"] .checkbox:checked,
   top: 4rem;
 }
 
-.top-3 {
-  top: 0.75rem;
-}
-
-.top-7 {
-  top: 1.75rem;
-}
-
-.-left-24 {
-  left: -6rem;
-}
-
 .top-2\/4 {
   top: 50%;
 }
 
 .top-28 {
   top: 7rem;
+}
+
+.top-3 {
+  top: 0.75rem;
+}
+
+.top-7 {
+  top: 1.75rem;
 }
 
 .z-10 {
@@ -2469,6 +2469,10 @@ body[dir="rtl"] .checkbox:checked,
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
 }
 
 .mr-2 {
@@ -2583,22 +2587,6 @@ body[dir="rtl"] .checkbox:checked,
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[50\%\] {
-  height: 50%;
-}
-
-.h-\[50vh\] {
-  height: 50vh;
-}
-
-.h-\[500px\] {
-  height: 500px;
-}
-
-.max-h-\[50vh\] {
-  max-height: 50vh;
 }
 
 .min-h-\[100vh\] {
@@ -2902,26 +2890,16 @@ body[dir="rtl"] .checkbox:checked,
   background-color: hsl(var(--su) / var(--tw-bg-opacity));
 }
 
-.bg-red-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
-}
-
-.bg-red-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
-}
-
 .bg-\[url\(\"\/public\/contact-bg\.png\"\)\] {
   background-image: url("/public/contact-bg.png");
 }
 
-.bg-\[url\(https\:\/\/scontent\.fcgp4-1\.fna\.fbcdn\.net\/v\/t39\.30808-6\/306539008_3292793961004209_6374030496542470897_n\.jpg\?stp\=dst-jpg_p180x540\&_nc_cat\=100\&ccb\=1-7\&_nc_sid\=8bfeb9\&_nc_eui2\=AeE7s7DB8n5WccdgER-182aT6GG-dzPLRQPoYb53M8tFA5LVjqTtMGhpMRILRqGmJbaxV7lEvnD9p1h_Bm0R7x0-\&_nc_ohc\=ARn8NLMNrksAX-sZTSX\&_nc_zt\=23\&_nc_ht\=scontent\.fcgp4-1\.fna\&oh\=00_AT82ac-EtR5WMjFkEFKa2fkN09hdVzONaOaYQ6toOghl8g\&oe\=63336D79\)\] {
-  background-image: url(https://scontent.fcgp4-1.fna.fbcdn.net/v/t39.30808-6/306539008_3292793961004209_6374030496542470897_n.jpg?stp=dst-jpg_p180x540&_nc_cat=100&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeE7s7DB8n5WccdgER-182aT6GG-dzPLRQPoYb53M8tFA5LVjqTtMGhpMRILRqGmJbaxV7lEvnD9p1h_Bm0R7x0-&_nc_ohc=ARn8NLMNrksAX-sZTSX&_nc_zt=23&_nc_ht=scontent.fcgp4-1.fna&oh=00_AT82ac-EtR5WMjFkEFKa2fkN09hdVzONaOaYQ6toOghl8g&oe=63336D79);
-}
-
 .bg-\[url\(https\:\/\/scontent\.fdac116-1\.fna\.fbcdn\.net\/v\/t39\.30808-6\/272053909_3118000775150196_373284106785125909_n\.jpg\?_nc_cat\=103\&ccb\=1-7\&_nc_sid\=8bfeb9\&_nc_ohc\=7mUJ_XdJbfIAX9GuWcj\&_nc_ht\=scontent\.fdac116-1\.fna\&oh\=00_AT8MutYDQo2Ugf3ncqqHcMXJsZeIyF3bruQdbLMkyljY7Q\&oe\=63304F4E\)\] {
   background-image: url(https://scontent.fdac116-1.fna.fbcdn.net/v/t39.30808-6/272053909_3118000775150196_373284106785125909_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=7mUJ_XdJbfIAX9GuWcj&_nc_ht=scontent.fdac116-1.fna&oh=00_AT8MutYDQo2Ugf3ncqqHcMXJsZeIyF3bruQdbLMkyljY7Q&oe=63304F4E);
+}
+
+.bg-\[url\(https\:\/\/scontent\.fdac144-1\.fna\.fbcdn\.net\/v\/t39\.30808-6\/340294912_774001154316741_4532593930377652587_n\.jpg\?_nc_cat\=105\&ccb\=1-7\&_nc_sid\=5f2048\&_nc_eui2\=AeFAgKZ_wW1kN-tSXHPvUOl3L6q9HdOGWukvqr0d04Za6X25K3Kid5uqfP2g_u-ntE7OE3h0BwOKZKEhmjkljthv\&_nc_ohc\=fYPRXMefQtQAX8yQCsS\&_nc_ht\=scontent\.fdac144-1\.fna\&oh\=00_AfCDaK0mI8iFno_RvGOHSHyZQAambnni9mmP256mToDegw\&oe\=65393925\)\] {
+  background-image: url(https://scontent.fdac144-1.fna.fbcdn.net/v/t39.30808-6/340294912_774001154316741_4532593930377652587_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFAgKZ_wW1kN-tSXHPvUOl3L6q9HdOGWukvqr0d04Za6X25K3Kid5uqfP2g_u-ntE7OE3h0BwOKZKEhmjkljthv&_nc_ohc=fYPRXMefQtQAX8yQCsS&_nc_ht=scontent.fdac144-1.fna&oh=00_AfCDaK0mI8iFno_RvGOHSHyZQAambnni9mmP256mToDegw&oe=65393925);
 }
 
 .bg-gradient-to-t {
@@ -2991,10 +2969,6 @@ body[dir="rtl"] .checkbox:checked,
 
 .object-cover {
   object-fit: cover;
-}
-
-.object-fill {
-  object-fit: fill;
 }
 
 .object-center {
@@ -3096,10 +3070,6 @@ body[dir="rtl"] .checkbox:checked,
 
 .pr-2 {
   padding-right: 0.5rem;
-}
-
-.pt-10 {
-  padding-top: 2.5rem;
 }
 
 .pt-3 {
@@ -3501,8 +3471,20 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (min-width: 768px) {
+  .md\:h-\[100vh\] {
+    height: 100vh;
+  }
+
+  .md\:h-full {
+    height: 100%;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -3557,14 +3539,6 @@ body::-webkit-scrollbar-thumb {
 
   .lg\:h-16 {
     height: 4rem;
-  }
-
-  .lg\:h-\[100vh\] {
-    height: 100vh;
-  }
-
-  .lg\:min-h-\[100vh\] {
-    min-height: 100vh;
   }
 
   .lg\:w-1\/2 {
