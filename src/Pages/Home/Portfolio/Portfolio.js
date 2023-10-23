@@ -22,7 +22,9 @@ const Portfolio = () => {
   return (
     <section className="p-3 lg:p-10 my-8">
       <div className="p-3 lg:p-10">
-        <h2 className="text-2xl lg:text-5xl font-bold text-white">Portfolio</h2>
+        <h2 className="text-2xl lg:text-5xl font-bold text-white text-center">
+          Portfolio
+        </h2>
       </div>
       <PhotoTypesMenu handleSelectedItem={handleSelectedItem} />
       {/* loading ======= */}

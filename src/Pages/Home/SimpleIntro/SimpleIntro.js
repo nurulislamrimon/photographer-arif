@@ -17,20 +17,20 @@ const SimpleIntro = () => {
             <hr className="border border-success mt-10 w-56" />
           </div>
           <article className="text-secondary mt-10 lg:mt-0 pb-10 lg:p-7">
-            <h4 className="text-success text-xl lg:text-2xl uppercase font-thin">
-              Mohammad Arif Hasan is a Natural Photography Artist based in
-              Noakhali, Bangladesh.
+            <h4 className="text-success text-xl lg:text-xl uppercase font-thin">
+              Mohammad Arif Hasan is a gifted natural photography artist hailing
+              from the scenic landscapes of Noakhali, Bangladesh.
             </h4>
             <p className="text-sm lg:text-lg font-thin">
-              He is so popular for his creative photographs all over the world.
-              Locally he is well known for his over size fitness and joker
-              character.He is so popular for his creative photographs all over
-              the world. Locally he is well known for his over size fitness and
-              joker character.He is so popular for his creative photographs all
-              over the world. Locally he is well known for his over size fitness
-              and joker character.He is so popular for his creative photographs
-              all over the world. Locally he is well known for his over size
-              fitness and joker character.{" "}
+              Arif Hasan is a creative photographer and a passionate student of
+              the arts, currently pursuing a degree in Zoology. Through his art,
+              he brings to life the intricate details of the world around us,
+              showcasing the magnificence of both the seen and the unseen. Arif
+              Hasan is not just a photographer; he's a storyteller who uses his
+              images to convey the emotions, stories, and connections that exist
+              in the natural world. With a camera in hand and a heart full of
+              curiosity, Arif continues to explore, discover, and share the
+              magic of our planet through the art of photography.{" "}
             </p>
           </article>
         </div>

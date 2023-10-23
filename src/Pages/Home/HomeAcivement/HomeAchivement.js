@@ -5,7 +5,7 @@ import { achivements } from "../../../Utilities/variables/achivements";
 
 const HomeAchivement = () => {
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-2 mt-5 justify-items-center justify-content-center gap-10 p-10">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 mt-5 justify-items-center justify-content-center gap-10 p-10">
       {achivements.map((achivement) => (
         <Link
           key={achivement.id}
@@ -18,7 +18,7 @@ const HomeAchivement = () => {
             data-aos-duration="2000"
             alt="img"
             src={achivement.photoUrl}
-            className="rounded-3xl h-auto mx-auto max-w-sm"
+            className="rounded-3xl h-auto mx-auto md:max-w-sm"
             loading="lazy"
           />
           <article className="absolute bottom-0 left-0 right-0 p-2 lg:p-5 flex flex-col glass rounded-bl-3xl rounded-br-3xl duration-1000">

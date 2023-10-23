@@ -9,8 +9,6 @@ const ManagePhotos = () => {
   const { data: photos, isLoading, refetch, error } = usePhotos("", 0);
   const [addNewPhoto, setAddNewPhoto] = useState(false);
 
-  console.log(photos);
-
   return (
     <div className="relative min-h-screen p-5">
       <label
