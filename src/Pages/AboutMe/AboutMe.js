@@ -1,13 +1,20 @@
 import React from "react";
 import "./AboutMe.css";
+import ContactInfoInputMaps from "../../Components/ContactInfoInputMaps/ContactInfoInputMaps";
+import { useForm } from "react-hook-form";
 
 const AboutMe = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   return (
-    <section>
+    <section className=" bg-black">
       <div
         className={`bg-fixed bg-no-repeat h-[100vh] bg-cover bg-center mb-10`}
         style={{
-          backgroundImage: "url('./images/section/story.jpg')",
+          backgroundImage: "url('./images/section/about-me.jpg')",
         }}
       >
         <div className="h-full w-full flex items-center justify-center bg-gradient-to-t from-black to-transparent">
@@ -16,7 +23,7 @@ const AboutMe = () => {
           </h2>
         </div>
       </div>
-      <div className="grid lg:grid-cols-2 py-10 bg-black items-center gap-10 px-10 lg:px-20">
+      <div className="grid lg:grid-cols-2 py-10items-center gap-10 px-10 lg:px-20">
         <div className="about-profile-photo-container relative z-10 w-3/4 mx-auto">
           <img
             src="./images/about-me.jpg"
@@ -38,6 +45,15 @@ const AboutMe = () => {
           frame narrates a unique tale of nature's splendor.
         </article>
       </div>
+      <h2 className="text-xl lg:text-5xl font-bold text-white text-center my-10">
+        Contact Me
+      </h2>
+      <ContactInfoInputMaps
+        register={register}
+        handleSubmit={handleSubmit}
+        errors={errors}
+        isSuccess={true}
+      />
     </section>
   );
 };

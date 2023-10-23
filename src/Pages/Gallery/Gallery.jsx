@@ -21,7 +21,7 @@ const Gallery = () => {
   return (
     <section>
       <div
-        className={`bg-fixed bg-no-repeat h-[100vh] bg-cover bg-center mb-10`}
+        className={`bg-fixed bg-no-repeat h-[100vh] bg-cover  bg-bottom mb-10`}
         style={{
           backgroundImage: "url('./images/section/gallery.jpg')",
         }}
